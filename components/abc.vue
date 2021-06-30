@@ -283,9 +283,9 @@
   import conf from '../conf';
 export default {
     name: "zkv",
-    data() { return { 
-      "sel_lang" : "hinDi", 
-      "selobztype" : "naun", 
+    data() { return {
+      "sel_lang" : "hinDi",
+      "selobztype" : "naun",
       "sel_char" : "s",
       zimezs: null,
       zvrds: null
@@ -294,7 +294,7 @@ export default {
   async fetch() {
     this.zimezs = await this.$content(conf.zimezs).fetch();
     this.zvrds = await this.$content(conf.zvrds).fetch();
-  },    
+  },
     methods: {},
     computed: {
       imezlist : function () {
@@ -303,19 +303,3 @@ export default {
     }
 }
 </script>
-<style>
-.div_zkv { line-height: 18px; }
-.ssu5p { font-family: ssu5p; font-size: 32px; font-weight:bold; color: green;}
-.u5cdot { font-family: u5cdot; font-size: 24px; font-weight:bold; color: red;}
-.indikl { font-size: 20px; color: #a1a; }
-.radio-toolbar { margin: 1px; }
-.radio-toolbar input[type="radio"] { opacity: 0; position: fixed; width: 0; }
-/* .radio-toolbar input[type="radio"]:checked { opacity: 100; position: fixed; width: 0; } */
-.radio-toolbar label {
-  display: inline-block; background-color: #fff; padding: 2px 2px;
-  border: 2px solid #44A; border-radius: 4px;
-}
-.radio-toolbar label:hover { background-color: cyan; }
-.radio-toolbar input[type="radio"] + label { background-color: #ff0; border-color: #4cA; }
-.radio-toolbar input[type="radio"]:focus + label { background-color: #fff; border: 2px dashed #000; }
-</style>

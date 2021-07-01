@@ -16,7 +16,7 @@ export default {
     ]
   },
   css: [
-    "~layouts/global.css",
+    // "~layouts/global.css",
   ],
   plugins: [
   ],

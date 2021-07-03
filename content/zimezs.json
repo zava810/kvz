@@ -1,6 +1,6 @@
 {
     "airbus": ["airbus.gif","hvaizHaz","seb" ],
-    "apple": ["apple.jpg","seb","seb" ],
+    "apple": ["apple.png","seb","seb" ],
     "arm": ["arm.jpg","seb","seb" ],
     "arrow": ["arrow.gif","AAro","seb" ],
     "arrow2": ["arrow2.gif","Tiir","seb" ],
@@ -8,8 +8,7 @@
     "backbody": ["backbody.jpg","kmAr","seb" ],
     "badminton": ["badminton.jpg","blla","seb" ],
     "bag": ["bag.jpg","Thela","seb" ],
-    "baloon": ["baloon.gif","gubbara","seb" ],
-    "banana": ["banana.gif","kela","seb" ],
+    "baloon": ["baloon.gif","gubbara","seb" ], "banana": ["banana.gif","kela","seb" ],
     "bananapeel": ["bananapeel.jpg","chilka","seb" ],
     "barber": ["barber.jpg","nai","seb" ],
     "basket": ["basket.jpg","tokri","seb" ],

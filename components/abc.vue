@@ -31,13 +31,41 @@
                 <option value="kemikls">kemikls</option>
             </select>
             <br/>
-        <div class="radio-toolbar">
           <b-modal class="u5cdot" id="modal-1" :title="sel_lang + ' : ' + sel_char">
-            <li v-for="(imez, index) in zvrds[sel_lang][sel_char]" :key="index">
+              <VueSlickCarousel v-for="(imez, index) in zvrds[sel_lang][sel_char]" :key="index" :arrows="true" :dots="true">
+              <div>
+                    <img class="d-block img-fluid w-100" width="1024" height="480"
+                    :src="require('../assets/pikcrs/' + zimezs[imez][0] )"
+                    alt="image slot"
+                    >
+              </div>
+              </VueSlickCarousel>
+            <!-- <div>
+                  <b-carousel id="carousel-1" v-for="(imez, index) in zvrds[sel_lang][sel_char]" :key="index" v-model="slide" :interval="4000" controls indicators background="#ababab" img-width="1024" img-height="480" style="text-shadow: 1px 1px 2px #333;" @sliding-start="onSlideStart" @sliding-end="onSlideEnd" >
+                      <b-carousel-slide>
+                          <template #img>
+                            <img class="d-block img-fluid w-100" width="1024" height="480"
+                              :src="require('../assets/pikcrs/' + zimezs[imez][0] )"
+                              alt="image slot"
+                            >
+                          </template>
+                      </b-carousel-slide>
+                  </b-carousel>
+                  <p class="mt-4"> Slide #: {{ slide }}<br> Sliding: {{ sliding }} </p>
+            </div> -->
+            <!-- <vue-image-slider :images="imageArray" :intervalVal=3000 :height=700 :width=1200 /> -->
+
+
+
+
+
+
+            <!-- <li v-for="(imez, index) in zvrds[sel_lang][sel_char]" :key="index">
                 <img :src="require('../assets/pikcrs/' + zimezs[imez][0] )"/>
                 <p class="u5cdot">{{ zimezs[imez][1] }}</p>
-            </li>
+            </li> -->
           </b-modal>
+          <div class="radio-toolbar">
           <input type="radio" v-b-modal.modal-1  v-model="sel_char"  id="A_redio" name="redio_zabc" value="A" >
           <label for="A_redio"><div class='div_zkv'>
             <span class="indikl">&#x985;&#xA05;&#xA85;&#xB05;</span>
@@ -281,25 +309,39 @@
 <script>
 // import { Meteor } from 'meteor/meteor';
   import conf from '../conf';
+  import VueSlickCarousel from 'vue-slick-carousel'
 export default {
     name: "zkv",
+    components: { VueSlickCarousel },
     data() { return {
-      "sel_lang" : "hinDi",
-      "selobztype" : "naun",
-      "sel_char" : "s",
-      zimezs: null,
-      zvrds: null
+              "sel_lang" : "hinDi",
+              "selobztype" : "naun",
+              "sel_char" : "s",
+              zimezs: null,
+              zvrds: null,
+              slide: 0,
+              sliding: null
        }
     },
   async fetch() {
     this.zimezs = await this.$content(conf.zimezs).fetch();
     this.zvrds = await this.$content(conf.zvrds).fetch();
   },
-    methods: {},
+    methods: {
+      onSlideStart(slide) {
+        this.sliding = true
+      },
+      onSlideEnd(slide) {
+        this.sliding = false
+      }
+    },
     computed: {
       imezlist : function () {
         return this.zimezs[sel_lang][sel_char]; // not  vorking
       }
+      // imezpaths : function () {
+      //   return this.zimezs[sel_lang][sel_char]; // not  vorking
+      // }
     }
 }
 </script>

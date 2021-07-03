@@ -36,7 +36,7 @@
         "l" : ["top","lighthouse","lamp","envelope","garlic","lantern"],
         "ll" : ["top","lighthouse","lamp","envelope","garlic","lantern"],
         "v" : ["van","washbasin","washingmachine","waiter","spoon"],
-        "s" : ["cycle","sandwich","sun","pig","whistle","ladder"],
+        "s" : ["apple","cycle","sandwich","sun","pig","whistle","ladder"],
         "sh" : ["lion","turnip"]
     },
     "Tmil" :  {
